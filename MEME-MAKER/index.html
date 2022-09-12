@@ -8,12 +8,9 @@
   <title>Meme Maker</title>
 </head>
 <body>
-  <canvas></canvas>
-  <!-- 선 굵기 변경 -->
-  <input id="line-width" type="range" min="1" max="10" value="5" step="0.5">
   <!-- color 변경 -->
-  <div>
-    <input type="color" id="color">
+    <div class="color-options">
+      <input type="color" id="color">
       <div class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></div>
       <div class="color-option" style="background-color: #3498db;" data-color="#3498db"></div>
       <div class="color-option" style="background-color: #34495e;" data-color="#34495e"></div>
@@ -26,11 +23,28 @@
       <div class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></div>
       <div class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></div>
       <div class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></div>
+    </div>
+  <canvas></canvas>
+  <div class="btns">
+    <!-- 선 굵기 변경 -->
+    <label for="line-width">
+      🖊Pen Width
+      <input id="line-width" type="range" min="1" max="10" value="5" step="0.5">
+    </label>
+    <!-- 채우기, 선그리기 모드 변경 버튼 -->
+    <button id="mode-btn">🩸Fill</button>
+    <button id="reset-btn">💥Reset</button>
+    <button id="eraser-btn">❌Erase</button>
+    <!-- 파일 이미지 가져오는 input -->
+    <!-- css로 그냥 꾸며주기는 어렵기 때문에 label로 감싼후 기존에 있는 input은 안보이게 해준다음 css로 꾸며준다. 
+    for의 이름과 input안에 있는 id의 이름을 같게 해주어야한다.-->
+    <label for="file">
+      📷Add Photo
+      <input type="file" accept="image/*" id="file">
+    </label>
+    <input type="text" placeholder="Write and double click" id="text">
+    <button id="save">💾Save image</button>
   </div>
-  <!-- 채우기, 선그리기 모드 변경 버튼 -->
-  <button id="mode-btn">Fill</button>
-  <button id="reset-btn">Reset</button>
-  <button id="eraser-btn">Erase</button>
   <script src="app.js"></script>
 </body>
 </html>
